@@ -1,0 +1,55 @@
+[
+  {
+    "name": "add",
+    "description": "Adds numbers together.",
+    "options": [
+      {
+        "name": "first",
+        "description": "A number to include in the sum.",
+        "type": 4,
+        "required": true
+      },
+      {
+        "name": "second",
+        "description": "Another number to include in the sum.",
+        "type": 4,
+        "required": true
+      },
+      {
+        "name": "third",
+        "description": "Another number to include in the sum.",
+        "type": 4,
+        "required": false
+      },
+      {
+        "name": "fourth",
+        "description": "Another number to include in the sum.",
+        "type": 4,
+        "required": false
+      },
+      {
+        "name": "fifth",
+        "description": "Another number to include in the sum.",
+        "type": 4,
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "ping",
+    "description": "Ensures the bot is responding to commands."
+  },
+  {
+    "name": "sqrt",
+    "description": "Finds the square root of a number.",
+    "options": [
+      {
+        "name": "number",
+        "description": "The number to find the square root of.",
+        "type": 4,
+        "required": true,
+        "autocomplete": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+{
+	"name": "dev-commands",
+	"type": "module",
+	"packageManager": "yarn@3.5.0",
+	"scripts": {
+		"lint": "prettier --check . && eslint src --ext ts --format=pretty",
+		"format": "prettier --write . && eslint src --ext ts --fix --format=pretty",
+		"build": "tsc",
+		"dev:forceCommands": "node ./dist/scripts/devLockfile.js --force",
+		"dev:commands": "node ./dist/scripts/devLockfile.js",
+		"dev": "yarn dev:forceCommands && concurrently -p \"[{name}]\" -n build,run -c gray,green \"tsc --watch\" \"nodemon --watch dist ./dist/index.js\""
+	},
+	"imports": {
+		"#util/*": "./dist/util/*",
+		"#interactions/*": "./dist/interactions/*",
+		"#logger": "./dist/util/logger.js",
+		"#structures": "./dist/structures/index.js"
+	},
+	"dependencies": {
+		"@discordjs/builders": "^1.5.0",
+		"@discordjs/collection": "^1.4.0",
+		"@discordjs/rest": "^1.6.0",
+		"@yuudachi/framework": "^0.2.9",
+		"common-tags": "^1.8.2",
+		"discord-api-types": "^0.37.37",
+		"discord-verify": "^1.0.0",
+		"fastify": "^4.15.0",
+		"fs-nextra": "^0.5.1",
+		"pino": "7",
+		"pino-pretty": "7",
+		"reflect-metadata": "^0.1.13",
+		"tsyringe": "^4.7.0"
+	},
+	"devDependencies": {
+		"@types/common-tags": "^1.8.1",
+		"@types/node": "18",
+		"concurrently": "^7.6.0",
+		"eslint": "^8.36.0",
+		"eslint-config-neon": "^0.1.41",
+		"eslint-formatter-pretty": "^5.0.0",
+		"nodemon": "^2.0.22",
+		"prettier": "^2.8.7",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.0.2"
+	},
+	"eslintConfig": {
+		"extends": [
+			"neon/common",
+			"neon/node",
+			"neon/typescript",
+			"neon/prettier"
+		],
+		"parserOptions": {
+			"project": "./tsconfig.json"
+		},
+		"rules": {
+			"comma-dangle": [
+				"error",
+				"always-multiline"
+			],
+			"@typescript-eslint/naming-convention": 0,
+			"@typescript-eslint/ban-types": 0,
+			"@typescript-eslint/restrict-template-expressions": 0,
+			"@typescript-eslint/no-base-to-string": 0,
+			"@typescript-eslint/space-before-function-paren": 0,
+			"tsdoc/syntax": 0
+		},
+		"ignorePatterns": [
+			"bundles",
+			"dist",
+			".yarn"
+		]
+	},
+	"prettier": {
+		"printWidth": 120,
+		"useTabs": true,
+		"singleQuote": true,
+		"quoteProps": "as-needed",
+		"trailingComma": "all",
+		"endOfLine": "lf"
+	},
+	"volta": {
+		"node": "18.15.0"
+	}
+}
