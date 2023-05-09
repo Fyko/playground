@@ -5,4 +5,5 @@ A demo using [SQLx](https://github.com/launchbadge/sqlx) which breaks when using
 1. `docker compose up -d`  
 
 Start the postgres database.  
+
 2. `cargo build`
