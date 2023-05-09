@@ -9,7 +9,7 @@ async fn main() -> anyhow::Result<()> {
         "insert into base_user (email) values ($1) returning id",
         "me@fyko.net"
     )
-    .fetch_one(pool)
+    .fetch_one(&pool)
     .await?;
 
     println!("admin: {:#?}", admin);
