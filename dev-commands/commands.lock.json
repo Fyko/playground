@@ -1,5 +1,18 @@
 [
   {
+    "name": "sqrt",
+    "description": "Finds the square root of a number.",
+    "options": [
+      {
+        "name": "number",
+        "description": "The number to find the square root of.",
+        "type": 4,
+        "required": true,
+        "autocomplete": true
+      }
+    ]
+  },
+  {
     "name": "add",
     "description": "Adds numbers together.",
     "options": [
@@ -38,18 +51,5 @@
   {
     "name": "ping",
     "description": "Ensures the bot is responding to commands."
-  },
-  {
-    "name": "sqrt",
-    "description": "Finds the square root of a number.",
-    "options": [
-      {
-        "name": "number",
-        "description": "The number to find the square root of.",
-        "type": 4,
-        "required": true,
-        "autocomplete": true
-      }
-    ]
   }
 ]

@@ -10,11 +10,11 @@ import { InteractionType } from 'discord-api-types/v10';
 import { verify } from 'discord-verify/node';
 import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import fastify from 'fastify';
-import type { Command } from './structures/Command.js';
-import { loadCommands } from './util/index.js';
 import { logger } from '#logger';
-import { isGuildAutocomplete, isGuildChatInput } from '#util/guards.js';
-import { createResponse } from '#util/respond.js';
+import { isGuildAutocomplete, isGuildChatInput } from '#util/guards.ts';
+import { loadCommands } from '#util/index.ts';
+import { createResponse } from '#util/respond.ts';
+import type { Command } from './structures/Command.ts';
 
 createCommands();
 
